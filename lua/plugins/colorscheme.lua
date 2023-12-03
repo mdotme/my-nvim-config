@@ -8,9 +8,20 @@ return {
     },
   },
   {
+    "navarasu/onedark.nvim",
+    -- name = "onedark",
+    lazy = false,
+    config = function()
+      require("onedark").setup({
+        style = "darker",
+      })
+      require("onedark").load()
+    end,
+  },
+  {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "catppuccin",
+      -- colorscheme = "catppuccin",
     },
   },
 }
