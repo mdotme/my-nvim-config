@@ -9,19 +9,22 @@ return {
   },
   {
     "navarasu/onedark.nvim",
-    -- name = "onedark",
+    name = "onedark",
+    lazy = true,
+    opts = {
+      style = "darker",
+    },
+  },
+  {
+    "craftzdog/solarized-osaka.nvim",
     lazy = false,
-    config = function()
-      require("onedark").setup({
-        style = "darker",
-      })
-      require("onedark").load()
-    end,
+    priority = 1000,
+    opts = {},
   },
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "catppuccin",
+      colorscheme = "onedark",
     },
   },
 }
