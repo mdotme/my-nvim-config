@@ -9,6 +9,16 @@ return {
               -- serverPath = "/home/amritk/.asdf/shims/tsserver",
               tsdk = "~/.nvm/versions/node/v20.11.0/lib/node_modules/typescript/lib",
             },
+            vue = {
+              hybridMode = false,
+            },
+            plugins = {
+              {
+                name = "@vue/language-server",
+                location = "~/.nvm/versions/node/v20.11.0/lib/node_modules/@vue/language-server",
+                languages = { "javascript", "typescript", "vue" },
+              }
+            }
           },
           filetypes = {
             'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json',
@@ -31,7 +41,8 @@ return {
             },
             typescript = {
               -- serverPath = "/home/amritk/.asdf/shims/tsserver",
-              tsdk = "~/.nvm/versions/node/v20.11.0/lib/node_modules/typescript/lib",
+              -- tsdk = "~/.nvm/versions/node/v20.11.0/lib/node_modules/typescript/lib",
+              tsdk = vim.fn.getcwd() .. "/node_modules/typescript/lib"
             },
           },
         }
