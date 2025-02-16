@@ -4,8 +4,11 @@
 
 local map = vim.keymap.set
 
-map("n", "<C-p>", "<cmd>Telescope find_files<cr>", { desc = "Find files (Telescope)" })
-map("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Search string live_grep (global)" })
+if vim.g.lazyvim_picker == "telescope" then
+  map("n", "<C-p>", "<cmd>Telescope find_files<cr>", { desc = "Find files (Telescope)" })
+  map("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", { desc = "Search string live_grep (global)" })
+end
+
 map(
   "n",
   "<leader>fw",
@@ -22,3 +25,5 @@ map("v", "<leader>cw", "y/<C-r>0<CR>Ncgn", { noremap = true, silent = true, desc
 map("n", "<C-w>", function()
   Snacks.bufdelete()
 end, { desc = "Delete Buffer" })
+
+map("n", ",p", '"0p', { noremap = true, silent = true, desc = "Paste last yankeed text" })
